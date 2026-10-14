@@ -34,15 +34,19 @@ export default function Hero({ onOpenBooking }) {
             <span className="h-[1px] w-6 sm:w-10 bg-muted-gold/80" />
           </div>
 
-          {/* Main Heading */}
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-warm-ivory tracking-tight leading-[1.1] mb-6 sm:mb-8 drop-shadow-md">
-            Escape to the <br />
-            <span className="italic font-light text-sand-beige">Beauty of Nature.</span>
+          {/* Main Refined Heading */}
+          <h1 className="text-center tracking-tight mb-6 sm:mb-7 drop-shadow-md">
+            <span className="block font-serif font-light text-2xl sm:text-3xl md:text-4xl text-warm-ivory/90 tracking-wide mb-1.5 sm:mb-2.5">
+              Discover the
+            </span>
+            <span className="block font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal italic text-sand-beige leading-[1.15]">
+              Beauty of Pushkar.
+            </span>
           </h1>
 
           {/* Supporting Text */}
-          <p className="text-sm sm:text-lg md:text-xl text-warm-ivory/95 leading-relaxed font-light max-w-2xl mx-auto mb-10 sm:mb-12 drop-shadow">
-            Discover peaceful moments, mountain scenery and a relaxing stay at Parvat Valley Resort, Pushkar.
+          <p className="text-sm sm:text-base md:text-lg text-warm-ivory/90 leading-relaxed font-light max-w-xl mx-auto mb-9 sm:mb-11 drop-shadow">
+            Discover the charm of Rajasthan with a relaxing stay surrounded by the natural beauty of Pushkar.
           </p>
 
           {/* Refined Two CTA Buttons */}
