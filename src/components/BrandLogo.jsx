@@ -77,22 +77,22 @@ export default function BrandLogo({ variant = 'light', size = 'md', className = 
 
       {/* Main Brand Wordmark */}
       <span
-        className={`font-serif font-semibold uppercase leading-none ${scaleConfig.titleSize} ${scaleConfig.tracking}`}
+        className={`font-serif font-semibold uppercase leading-none whitespace-nowrap ${scaleConfig.titleSize} ${scaleConfig.tracking}`}
         style={{ color: primaryColor }}
       >
         PARVAT VALLEY
       </span>
 
       {/* Supporting Subtitle with Balanced Hairline Rules */}
-      <div className="flex items-center justify-center w-full gap-2 mt-0.5">
-        <span className="h-[1px] w-3 sm:w-5 bg-gradient-to-r from-transparent to-[#B99A62]/60" />
+      <div className="flex items-center justify-center w-full gap-1.5 sm:gap-2 mt-0.5">
+        <span className="h-[1px] w-2.5 sm:w-5 bg-gradient-to-r from-transparent to-[#B99A62]/60" />
         <span
-          className={`font-sans font-medium uppercase leading-none ${scaleConfig.subSize} ${scaleConfig.subTracking}`}
+          className={`font-sans font-medium uppercase leading-none whitespace-nowrap ${scaleConfig.subSize} ${scaleConfig.subTracking}`}
           style={{ color: subtitleColor }}
         >
           RESORT &middot; PUSHKAR
         </span>
-        <span className="h-[1px] w-3 sm:w-5 bg-gradient-to-l from-transparent to-[#B99A62]/60" />
+        <span className="h-[1px] w-2.5 sm:w-5 bg-gradient-to-l from-transparent to-[#B99A62]/60" />
       </div>
     </div>
   );

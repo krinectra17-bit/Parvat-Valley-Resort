@@ -98,7 +98,7 @@ export default function BookingSection() {
             </div>
 
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-warm-ivory tracking-tight mb-6">
-              Reserve Your <span className="block italic font-normal text-muted-gold">Pushkar Escape</span>
+              Reserve Your <span className="block italic font-normal text-muted-gold">Pushkar Sanctuary</span>
             </h2>
 
             <p className="text-sand-beige/90 text-sm sm:text-base leading-relaxed mb-8 font-light">
@@ -165,20 +165,20 @@ export default function BookingSection() {
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-4">
                   {/* Name and Phone */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-forest-dark uppercase tracking-wider mb-1">
                         Your Full Name <span className="text-red-600">*</span>
                       </label>
                       <div className="relative">
-                        <User className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                        <User className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                         <input
                           type="text"
                           name="guestName"
                           value={formData.guestName}
                           onChange={handleChange}
                           placeholder="Your name"
-                          className={`w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border bg-white ${
+                          className={`w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border bg-white ${
                             errors.guestName ? 'border-red-500' : 'border-sand-beige focus:border-muted-gold'
                           }`}
                           required
@@ -197,14 +197,14 @@ export default function BookingSection() {
                         Mobile Number <span className="text-red-600">*</span>
                       </label>
                       <div className="relative">
-                        <Phone className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                        <Phone className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                         <input
                           type="tel"
                           name="mobileNumber"
                           value={formData.mobileNumber}
                           onChange={handleChange}
                           placeholder="10-digit mobile number"
-                          className={`w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border bg-white ${
+                          className={`w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border bg-white ${
                             errors.mobileNumber ? 'border-red-500' : 'border-sand-beige focus:border-muted-gold'
                           }`}
                           required
@@ -220,20 +220,20 @@ export default function BookingSection() {
                   </div>
 
                   {/* Dates */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-forest-dark uppercase tracking-wider mb-1">
                         Check-in Date <span className="text-red-600">*</span>
                       </label>
                       <div className="relative">
-                        <Calendar className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                        <Calendar className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                         <input
                           type="date"
                           name="checkInDate"
                           min={today}
                           value={formData.checkInDate}
                           onChange={handleChange}
-                          className={`w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border bg-white ${
+                          className={`w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border bg-white ${
                             errors.checkInDate ? 'border-red-500' : 'border-sand-beige focus:border-muted-gold'
                           }`}
                           required
@@ -252,14 +252,14 @@ export default function BookingSection() {
                         Check-out Date <span className="text-red-600">*</span>
                       </label>
                       <div className="relative">
-                        <Calendar className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                        <Calendar className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                         <input
                           type="date"
                           name="checkOutDate"
                           min={formData.checkInDate || today}
                           value={formData.checkOutDate}
                           onChange={handleChange}
-                          className={`w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border bg-white ${
+                          className={`w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border bg-white ${
                             errors.checkOutDate ? 'border-red-500' : 'border-sand-beige focus:border-muted-gold'
                           }`}
                           required
@@ -274,8 +274,8 @@ export default function BookingSection() {
                     </div>
                   </div>
 
-                  {/* Occupancy */}
-                  <div className="grid grid-cols-3 gap-3">
+                  {/* Occupancy: 1-col on small mobile, 3-col on >= 420px */}
+                  <div className="grid grid-cols-1 xs:grid-cols-3 gap-2.5 sm:gap-3">
                     <div>
                       <label className="block text-xs font-semibold text-forest-dark uppercase tracking-wider mb-1">
                         Adults
@@ -284,7 +284,7 @@ export default function BookingSection() {
                         name="adults"
                         value={formData.adults}
                         onChange={handleChange}
-                        className="w-full px-3 py-2.5 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold"
+                        className="w-full px-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold cursor-pointer"
                       >
                         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
                           <option key={n} value={n}>{n} Adult{n > 1 ? 's' : ''}</option>
@@ -300,7 +300,7 @@ export default function BookingSection() {
                         name="children"
                         value={formData.children}
                         onChange={handleChange}
-                        className="w-full px-3 py-2.5 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold"
+                        className="w-full px-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold cursor-pointer"
                       >
                         {[0, 1, 2, 3, 4, 5].map((n) => (
                           <option key={n} value={n}>{n} Child{n === 1 ? '' : 'ren'}</option>
@@ -316,7 +316,7 @@ export default function BookingSection() {
                         name="rooms"
                         value={formData.rooms}
                         onChange={handleChange}
-                        className="w-full px-3 py-2.5 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold"
+                        className="w-full px-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold cursor-pointer"
                       >
                         {[1, 2, 3, 4, 5, 6].map((n) => (
                           <option key={n} value={n}>{n} Room{n > 1 ? 's' : ''}</option>
@@ -331,12 +331,12 @@ export default function BookingSection() {
                       Preferred Room Category
                     </label>
                     <div className="relative">
-                      <Home className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                      <Home className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                       <select
                         name="roomCategory"
                         value={formData.roomCategory}
                         onChange={handleChange}
-                        className="w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold font-medium"
+                        className="w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold font-medium cursor-pointer"
                       >
                         <option value="Deluxe Room">Deluxe Room (Signature Wood & Bedding)</option>
                         <option value="Luxury Room">Luxury Room (Spacious Pool/Mountain Vantage)</option>
@@ -357,7 +357,7 @@ export default function BookingSection() {
                       onChange={handleChange}
                       rows={2}
                       placeholder="e.g. Early check-in request, pool view preferred..."
-                      className="w-full p-3 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold resize-none"
+                      className="w-full p-3 text-base sm:text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold resize-none"
                     />
                   </div>
 
@@ -365,7 +365,7 @@ export default function BookingSection() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm uppercase tracking-wider py-3.5 px-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 active:scale-98"
+                      className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider py-3.5 sm:py-4 px-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 active:scale-98 min-h-[48px] touch-manipulation cursor-pointer"
                     >
                       <MessageSquare className="w-4 h-4 fill-white" />
                       <span>Send Enquiry via WhatsApp</span>

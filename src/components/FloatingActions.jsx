@@ -46,10 +46,10 @@ export default function FloatingActions({ onOpenBooking }) {
       </div>
 
       {/* Mobile Sticky Bottom Action Bar (Only on viewports < 640px) */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-forest-dark/95 backdrop-blur-md border-t border-muted-gold/30 px-3 py-2.5 shadow-2xl flex items-center justify-between gap-2.5">
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-forest-dark/95 backdrop-blur-md border-t border-muted-gold/30 px-3 pt-2 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-2xl flex items-center justify-between gap-2.5">
         <a
           href={`tel:${RESORT_INFO.contact.phoneRaw}`}
-          className="flex-1 bg-forest-green hover:bg-forest-green/80 text-warm-ivory text-xs font-semibold uppercase tracking-wider py-2.5 px-2 rounded-lg flex items-center justify-center gap-1.5 border border-muted-gold/30"
+          className="flex-1 bg-forest-green hover:bg-forest-green/80 text-warm-ivory text-xs font-semibold uppercase tracking-wider py-2.5 px-2 rounded-lg flex items-center justify-center gap-1.5 border border-muted-gold/30 min-h-[44px] touch-manipulation active:scale-95"
         >
           <Phone className="w-3.5 h-3.5 text-muted-gold" />
           <span>Call Resort</span>
@@ -57,7 +57,7 @@ export default function FloatingActions({ onOpenBooking }) {
 
         <button
           onClick={() => onOpenBooking()}
-          className="flex-1 bg-muted-gold hover:bg-gold-light text-forest-dark text-xs font-semibold uppercase tracking-wider py-2.5 px-2 rounded-lg flex items-center justify-center gap-1.5 shadow"
+          className="flex-1 bg-muted-gold hover:bg-gold-light text-forest-dark text-xs font-semibold uppercase tracking-wider py-2.5 px-2 rounded-lg flex items-center justify-center gap-1.5 shadow min-h-[44px] touch-manipulation active:scale-95 cursor-pointer"
         >
           <Calendar className="w-3.5 h-3.5 text-forest-dark" />
           <span>Book Stay</span>
@@ -67,7 +67,7 @@ export default function FloatingActions({ onOpenBooking }) {
           href={defaultWhatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 rounded-lg bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow"
+          className="w-11 h-11 rounded-lg bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow min-h-[44px] touch-manipulation active:scale-95"
           aria-label="Direct WhatsApp Message"
         >
           <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">

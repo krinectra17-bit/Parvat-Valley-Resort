@@ -139,22 +139,22 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
       aria-modal="true"
       aria-labelledby="booking-modal-title"
     >
-      <div className="relative w-full max-w-xl bg-warm-ivory rounded-2xl shadow-2xl border border-muted-gold/40 overflow-hidden my-6">
+      <div className="relative w-full max-w-xl bg-warm-ivory rounded-2xl shadow-2xl border border-muted-gold/40 overflow-hidden my-auto max-h-[90svh] flex flex-col">
         
         {/* Modal Top Header */}
-        <div className="bg-forest-dark px-6 py-5 text-warm-ivory flex items-center justify-between border-b border-muted-gold/30">
+        <div className="bg-forest-dark px-4 sm:px-6 py-4 sm:py-5 text-warm-ivory flex items-center justify-between border-b border-muted-gold/30 shrink-0">
           <div>
             <span className="text-[10px] uppercase tracking-[0.25em] text-muted-gold font-semibold block">
               Direct Resort Enquiry
             </span>
-            <h3 id="booking-modal-title" className="font-serif text-xl sm:text-2xl font-bold">
+            <h3 id="booking-modal-title" className="font-serif text-lg sm:text-2xl font-bold">
               Enquire About Your Stay
             </h3>
           </div>
 
           <button
             onClick={handleModalClose}
-            className="p-2 rounded-full hover:bg-forest-green text-warm-ivory transition-colors focus:outline-none"
+            className="w-11 h-11 rounded-full hover:bg-forest-green text-warm-ivory transition-colors flex items-center justify-center focus:outline-none touch-manipulation shrink-0"
             aria-label="Close booking modal"
           >
             <X className="w-5 h-5" />
@@ -162,7 +162,7 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 sm:p-7 max-h-[78vh] overflow-y-auto">
+        <div className="p-4 sm:p-7 overflow-y-auto flex-1 overscroll-contain">
           {successMessage ? (
             <div className="py-8 text-center space-y-4">
               <div className="w-14 h-14 mx-auto rounded-full bg-emerald-100 text-forest-green flex items-center justify-center">
@@ -178,13 +178,13 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button
                   onClick={handleModalClose}
-                  className="w-full sm:w-auto px-6 py-2.5 rounded bg-forest-green hover:bg-forest-dark text-warm-ivory text-xs uppercase tracking-wider font-semibold"
+                  className="w-full sm:w-auto px-6 py-3 rounded bg-forest-green hover:bg-forest-dark text-warm-ivory text-xs uppercase tracking-wider font-semibold min-h-[44px] flex items-center justify-center touch-manipulation cursor-pointer"
                 >
                   Return to Website
                 </button>
                 <a
                   href={`tel:${RESORT_INFO.contact.phoneRaw}`}
-                  className="w-full sm:w-auto px-6 py-2.5 rounded border border-muted-gold text-forest-dark hover:bg-sand-beige text-xs uppercase tracking-wider font-semibold inline-flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3 rounded border border-muted-gold text-forest-dark hover:bg-sand-beige text-xs uppercase tracking-wider font-semibold inline-flex items-center justify-center gap-2 min-h-[44px] touch-manipulation"
                 >
                   <Phone className="w-3.5 h-3.5 text-muted-gold" />
                   <span>Call Us Now</span>
@@ -203,20 +203,20 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
               </div>
 
               {/* Guest Name & Mobile */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-forest-dark uppercase tracking-wider mb-1">
                     Guest Name <span className="text-red-600">*</span>
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                    <User className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                     <input
                       type="text"
                       name="guestName"
                       value={formData.guestName}
                       onChange={handleChange}
                       placeholder="e.g. Vikram Sharma"
-                      className={`w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border bg-white text-dark-charcoal ${
+                      className={`w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border bg-white text-dark-charcoal ${
                         errors.guestName ? 'border-red-500' : 'border-sand-beige focus:border-muted-gold'
                       }`}
                       required
@@ -235,14 +235,14 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
                     Mobile Number <span className="text-red-600">*</span>
                   </label>
                   <div className="relative">
-                    <Phone className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                    <Phone className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                     <input
                       type="tel"
                       name="mobileNumber"
                       value={formData.mobileNumber}
                       onChange={handleChange}
                       placeholder="e.g. 9876543210"
-                      className={`w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border bg-white text-dark-charcoal ${
+                      className={`w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border bg-white text-dark-charcoal ${
                         errors.mobileNumber ? 'border-red-500' : 'border-sand-beige focus:border-muted-gold'
                       }`}
                       required
@@ -258,20 +258,20 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
               </div>
 
               {/* Dates Row */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-forest-dark uppercase tracking-wider mb-1">
                     Check-in Date <span className="text-red-600">*</span>
                   </label>
                   <div className="relative">
-                    <Calendar className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                    <Calendar className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                     <input
                       type="date"
                       name="checkInDate"
                       min={today}
                       value={formData.checkInDate}
                       onChange={handleChange}
-                      className={`w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border bg-white text-dark-charcoal ${
+                      className={`w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border bg-white text-dark-charcoal ${
                         errors.checkInDate ? 'border-red-500' : 'border-sand-beige focus:border-muted-gold'
                       }`}
                       required
@@ -291,14 +291,14 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
                     Check-out Date <span className="text-red-600">*</span>
                   </label>
                   <div className="relative">
-                    <Calendar className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                    <Calendar className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                     <input
                       type="date"
                       name="checkOutDate"
                       min={formData.checkInDate || today}
                       value={formData.checkOutDate}
                       onChange={handleChange}
-                      className={`w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border bg-white text-dark-charcoal ${
+                      className={`w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border bg-white text-dark-charcoal ${
                         errors.checkOutDate ? 'border-red-500' : 'border-sand-beige focus:border-muted-gold'
                       }`}
                       required
@@ -314,8 +314,8 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
                 </div>
               </div>
 
-              {/* Occupancy & Rooms */}
-              <div className="grid grid-cols-3 gap-3">
+              {/* Occupancy & Rooms: 1-col on tiny screens, 3-col on >= 420px */}
+              <div className="grid grid-cols-1 xs:grid-cols-3 gap-2.5 sm:gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-forest-dark uppercase tracking-wider mb-1">
                     Adults
@@ -324,7 +324,7 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
                     name="adults"
                     value={formData.adults}
                     onChange={handleChange}
-                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold"
+                    className="w-full px-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold cursor-pointer"
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                       <option key={num} value={num}>{num} Adult{num > 1 ? 's' : ''}</option>
@@ -340,7 +340,7 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
                     name="children"
                     value={formData.children}
                     onChange={handleChange}
-                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold"
+                    className="w-full px-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold cursor-pointer"
                   >
                     {[0, 1, 2, 3, 4, 5].map((num) => (
                       <option key={num} value={num}>{num} Child{num === 1 ? '' : 'ren'}</option>
@@ -356,7 +356,7 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
                     name="rooms"
                     value={formData.rooms}
                     onChange={handleChange}
-                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold"
+                    className="w-full px-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold cursor-pointer"
                   >
                     {[1, 2, 3, 4, 5, 6].map((num) => (
                       <option key={num} value={num}>{num} Room{num > 1 ? 's' : ''}</option>
@@ -371,12 +371,12 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
                   Preferred Room Category
                 </label>
                 <div className="relative">
-                  <Home className="w-4 h-4 text-muted-gold absolute left-3 top-3 pointer-events-none" />
+                  <Home className="w-4 h-4 text-muted-gold absolute left-3 top-3.5 pointer-events-none" />
                   <select
                     name="roomCategory"
                     value={formData.roomCategory}
                     onChange={handleChange}
-                    className="w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold font-medium"
+                    className="w-full pl-9 pr-3 py-2.5 sm:py-2 text-base sm:text-sm min-h-[44px] rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold font-medium cursor-pointer"
                   >
                     <option value="Deluxe Room">Deluxe Room (Signature Wood & Bedding)</option>
                     <option value="Luxury Room">Luxury Room (Spacious Pool/Mountain Vantage)</option>
@@ -397,7 +397,7 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
                   onChange={handleChange}
                   rows={2}
                   placeholder="e.g. Early check-in request, pool view preferred, traveling with elderly parents..."
-                  className="w-full p-3 text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold resize-none"
+                  className="w-full p-3 text-base sm:text-sm rounded-lg border border-sand-beige bg-white text-dark-charcoal focus:border-muted-gold resize-none"
                 />
               </div>
 
@@ -406,7 +406,7 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Deluxe Ro
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm uppercase tracking-wider py-3.5 px-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 active:scale-98"
+                  className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider py-3.5 sm:py-4 px-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 active:scale-98 min-h-[48px] touch-manipulation cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4 fill-white" />
                   <span>Send Enquiry via WhatsApp</span>

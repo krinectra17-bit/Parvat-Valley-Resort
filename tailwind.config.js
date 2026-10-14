@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '420px',
+      },
       colors: {
         'forest-green': '#183D2B',
         'forest-dark': '#10291E',

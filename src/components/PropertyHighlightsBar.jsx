@@ -3,71 +3,54 @@ import { MapPin, Waves, Utensils, Clock } from 'lucide-react';
 import { RESORT_INFO } from '../data/resortData';
 
 export default function PropertyHighlightsBar() {
+  const highlights = [
+    {
+      icon: MapPin,
+      title: 'Foothills Setting',
+      desc: 'Near Savitri Mata Mandir',
+    },
+    {
+      icon: Waves,
+      title: 'Swimming Pool',
+      desc: 'Mountain Vantage View',
+    },
+    {
+      icon: Utensils,
+      title: 'Pure Vegetarian',
+      desc: 'Fresh Traditional Dining',
+    },
+    {
+      icon: Clock,
+      title: 'Check-in / Check-out',
+      desc: `${RESORT_INFO.timings.checkIn} / ${RESORT_INFO.timings.checkOut}`,
+    },
+  ];
+
   return (
-    <section className="relative z-20 bg-forest-dark border-y border-muted-gold/25 py-6 sm:py-7 text-warm-ivory">
+    <section className="relative z-20 bg-forest-dark border-y border-muted-gold/25 py-5 sm:py-6 text-warm-ivory">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-white/10">
-          
-          {/* Highlight 1: Prime Location */}
-          <div className="flex items-center gap-3.5 justify-center md:justify-start px-2 py-1">
-            <div className="w-10 h-10 rounded-full bg-forest-green/90 border border-muted-gold/40 flex items-center justify-center text-muted-gold shrink-0">
-              <MapPin className="w-4 h-4" />
-            </div>
-            <div>
-              <span className="block text-[11px] uppercase tracking-[0.2em] text-sand-beige font-semibold">
-                Foothills Setting
-              </span>
-              <span className="block text-xs sm:text-sm text-warm-ivory/85 font-light">
-                Near Savitri Mata Mandir
-              </span>
-            </div>
-          </div>
-
-          {/* Highlight 2: Swimming Pool */}
-          <div className="flex items-center gap-3.5 justify-center md:justify-start px-2 py-1">
-            <div className="w-10 h-10 rounded-full bg-forest-green/90 border border-muted-gold/40 flex items-center justify-center text-muted-gold shrink-0">
-              <Waves className="w-4 h-4" />
-            </div>
-            <div>
-              <span className="block text-[11px] uppercase tracking-[0.2em] text-sand-beige font-semibold">
-                Swimming Pool
-              </span>
-              <span className="block text-xs sm:text-sm text-warm-ivory/85 font-light">
-                Panoramic Mountain Vantage
-              </span>
-            </div>
-          </div>
-
-          {/* Highlight 3: Dining */}
-          <div className="flex items-center gap-3.5 justify-center md:justify-start px-2 py-1 pt-4 md:pt-1">
-            <div className="w-10 h-10 rounded-full bg-forest-green/90 border border-muted-gold/40 flex items-center justify-center text-muted-gold shrink-0">
-              <Utensils className="w-4 h-4" />
-            </div>
-            <div>
-              <span className="block text-[11px] uppercase tracking-[0.2em] text-sand-beige font-semibold">
-                Pure Vegetarian
-              </span>
-              <span className="block text-xs sm:text-sm text-warm-ivory/85 font-light">
-                Fresh Traditional Kitchen
-              </span>
-            </div>
-          </div>
-
-          {/* Highlight 4: Timings */}
-          <div className="flex items-center gap-3.5 justify-center md:justify-start px-2 py-1 pt-4 md:pt-1">
-            <div className="w-10 h-10 rounded-full bg-forest-green/90 border border-muted-gold/40 flex items-center justify-center text-muted-gold shrink-0">
-              <Clock className="w-4 h-4" />
-            </div>
-            <div>
-              <span className="block text-[11px] uppercase tracking-[0.2em] text-sand-beige font-semibold">
-                Check-in / Check-out
-              </span>
-              <span className="block text-xs sm:text-sm text-warm-ivory/85 font-light">
-                {RESORT_INFO.timings.checkIn} / {RESORT_INFO.timings.checkOut}
-              </span>
-            </div>
-          </div>
-
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-left">
+          {highlights.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={idx}
+                className="flex items-center gap-3 sm:gap-3.5 p-2 rounded-lg bg-white/[0.02] sm:bg-transparent"
+              >
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-forest-green/90 border border-muted-gold/40 flex items-center justify-center text-muted-gold shrink-0">
+                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <span className="block text-[10px] sm:text-[11px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-sand-beige font-semibold truncate">
+                    {item.title}
+                  </span>
+                  <span className="block text-[11px] sm:text-xs text-warm-ivory/85 font-light truncate">
+                    {item.desc}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

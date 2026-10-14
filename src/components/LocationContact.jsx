@@ -104,19 +104,19 @@ export default function LocationContact({ onOpenBooking }) {
             </div>
 
             {/* Quick Actions */}
-            <div className="pt-8 border-t border-sand-beige mt-8 space-y-3">
+            <div className="pt-6 sm:pt-8 border-t border-sand-beige mt-6 sm:mt-8 space-y-3">
               <button
                 onClick={() => onOpenBooking()}
-                className="w-full bg-forest-green hover:bg-forest-dark text-warm-ivory py-3.5 px-4 rounded-xl text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 transition-all active:scale-95 shadow"
+                className="w-full bg-forest-green hover:bg-forest-dark text-warm-ivory py-3.5 px-4 rounded-xl text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 transition-all active:scale-95 shadow min-h-[48px] touch-manipulation cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 text-muted-gold" />
                 <span>Enquire via WhatsApp</span>
               </button>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 xs:grid-cols-2 gap-2.5 sm:gap-3">
                 <a
                   href={`tel:${RESORT_INFO.contact.phoneRaw}`}
-                  className="bg-sand-beige hover:bg-sand-beige/80 text-forest-dark py-2.5 px-3 rounded-lg text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-1.5 transition-colors border border-muted-gold/40"
+                  className="bg-sand-beige hover:bg-sand-beige/80 text-forest-dark py-2.5 px-3 rounded-lg text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-1.5 transition-colors border border-muted-gold/40 min-h-[44px] touch-manipulation active:scale-95"
                 >
                   <Phone className="w-3.5 h-3.5 text-forest-green" />
                   <span>Call Resort</span>
@@ -126,7 +126,7 @@ export default function LocationContact({ onOpenBooking }) {
                   href={RESORT_INFO.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-sand-beige hover:bg-sand-beige/80 text-forest-dark py-2.5 px-3 rounded-lg text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-1.5 transition-colors border border-muted-gold/40"
+                  className="bg-sand-beige hover:bg-sand-beige/80 text-forest-dark py-2.5 px-3 rounded-lg text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-1.5 transition-colors border border-muted-gold/40 min-h-[44px] touch-manipulation active:scale-95"
                 >
                   <Navigation className="w-3.5 h-3.5 text-forest-green" />
                   <span>Google Maps</span>
@@ -140,10 +140,10 @@ export default function LocationContact({ onOpenBooking }) {
           <div className="lg:col-span-7 flex flex-col">
             <div className="bg-white rounded-2xl overflow-hidden border border-sand-beige shadow-luxury flex-grow flex flex-col">
               {/* Map Top Bar */}
-              <div className="p-4 bg-warm-ivory border-b border-sand-beige flex items-center justify-between">
+              <div className="p-3.5 sm:p-4 bg-warm-ivory border-b border-sand-beige flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-forest-green" />
-                  <span className="text-xs font-semibold text-forest-dark uppercase tracking-wider">
+                  <MapPin className="w-4 h-4 text-forest-green shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold text-forest-dark uppercase tracking-wider truncate">
                     Savitri Mata Mandir Foothills, Pushkar
                   </span>
                 </div>
@@ -151,7 +151,7 @@ export default function LocationContact({ onOpenBooking }) {
                   href={RESORT_INFO.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-semibold text-forest-green hover:text-muted-gold inline-flex items-center gap-1"
+                  className="text-xs font-semibold text-forest-green hover:text-muted-gold inline-flex items-center gap-1 shrink-0 ml-2"
                 >
                   <span>Open in App</span>
                   <ExternalLink className="w-3 h-3" />
@@ -159,7 +159,7 @@ export default function LocationContact({ onOpenBooking }) {
               </div>
 
               {/* Map Iframe */}
-              <div className="relative w-full h-[360px] sm:h-[420px] flex-grow bg-sand-beige/30">
+              <div className="relative w-full h-[260px] xs:h-[300px] sm:h-[400px] flex-grow bg-sand-beige/30">
                 <iframe
                   title="Parvat Valley Resort Location Map"
                   src={RESORT_INFO.googleMapsEmbed}

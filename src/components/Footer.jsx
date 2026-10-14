@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear();
 export default function Footer({ onOpenBooking }) {
 
   return (
-    <footer className="bg-forest-dark text-warm-ivory border-t border-muted-gold/25 pt-16 pb-24 sm:pb-12 text-left relative overflow-hidden">
+    <footer className="bg-forest-dark text-warm-ivory border-t border-muted-gold/25 pt-16 pb-28 sm:pb-12 text-left relative overflow-hidden">
       {/* Background Subtle Pattern */}
       <div className="absolute inset-0 bg-radial-gradient from-forest-green/20 to-transparent pointer-events-none" />
 
