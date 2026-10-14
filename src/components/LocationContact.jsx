@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, MessageSquare, Clock, Navigation, ExternalLink } from 'lucide-react';
 import { RESORT_INFO } from '../data/resortData';
+import BrandLogo from './BrandLogo';
 
 export default function LocationContact({ onOpenBooking }) {
   return (
@@ -33,18 +34,8 @@ export default function LocationContact({ onOpenBooking }) {
           {/* Contact Details Card (5 cols) */}
           <div className="lg:col-span-5 bg-warm-ivory rounded-2xl p-7 sm:p-8 border border-sand-beige/90 shadow-luxury flex flex-col justify-between text-left">
             <div>
-              <div className="flex items-center gap-3 pb-6 border-b border-sand-beige mb-6">
-                <div className="w-12 h-12 rounded-full border border-muted-gold flex items-center justify-center bg-forest-dark text-muted-gold font-serif text-xl font-bold shrink-0">
-                  PV
-                </div>
-                <div>
-                  <h3 className="font-serif text-2xl font-bold text-forest-dark">
-                    Parvat Valley Resort
-                  </h3>
-                  <p className="text-xs text-muted-gold font-medium uppercase tracking-wider">
-                    Pushkar, Rajasthan
-                  </p>
-                </div>
+              <div className="pb-6 border-b border-sand-beige mb-6">
+                <BrandLogo variant="dark" size="sm" className="!items-start !text-left" />
               </div>
 
               {/* Information List */}

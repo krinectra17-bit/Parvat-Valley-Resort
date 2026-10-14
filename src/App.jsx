@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import PropertyHighlightsBar from './components/PropertyHighlightsBar';
 import ResortOverview from './components/ResortOverview';
 import Accommodations from './components/Accommodations';
 import PoolExperience from './components/PoolExperience';
@@ -33,10 +34,13 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main id="main-content">
-        {/* 1. Cinematic Hero Section (IMAGE 1: Exterior) */}
+        {/* 1. Cinematic Landscape Hero Section */}
         <Hero onOpenBooking={handleOpenBooking} />
 
-        {/* 2. Resort Overview / Introduction (IMAGE 5: Aerial View) */}
+        {/* 2. Separate Elegant Property Highlights & Location Bar */}
+        <PropertyHighlightsBar />
+
+        {/* 3. Resort Overview / Introduction */}
         <ResortOverview onOpenBooking={handleOpenBooking} />
 
         {/* 3. Accommodation / Rooms (IMAGE 4: Guest Room Interior) */}

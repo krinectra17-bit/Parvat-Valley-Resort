@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, MessageSquare, Clock, Shield } from 'lucide-react';
 import { RESORT_INFO } from '../data/resortData';
+import BrandLogo from './BrandLogo';
 
 const currentYear = new Date().getFullYear();
 
@@ -16,18 +17,8 @@ export default function Footer({ onOpenBooking }) {
           
           {/* Brand & Identity (4 cols) */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full border border-muted-gold flex items-center justify-center bg-forest-green text-muted-gold font-serif text-lg font-bold">
-                PV
-              </div>
-              <div>
-                <span className="block font-serif text-2xl font-bold tracking-wide uppercase text-warm-ivory">
-                  Parvat Valley
-                </span>
-                <span className="block text-[10px] tracking-[0.25em] text-sand-beige uppercase font-semibold">
-                  Resort • Pushkar
-                </span>
-              </div>
+            <div className="mb-5">
+              <BrandLogo variant="light" size="md" className="!items-start !text-left" />
             </div>
 
             <p className="text-xs sm:text-sm text-sand-beige/80 leading-relaxed font-light mb-6">

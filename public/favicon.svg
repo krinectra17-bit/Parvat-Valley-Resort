@@ -1,12 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#183D2B"/>
-  <!-- Mountain silhouette -->
-  <path d="M12 46L26 24L38 40L44 32L52 46H12Z" fill="#B99A62" fill-opacity="0.25"/>
-  <path d="M18 46L30 28L42 46H18Z" fill="#B99A62" fill-opacity="0.4"/>
-  <!-- Rajasthani jharokha arch frame -->
-  <path d="M20 46V28C20 28 24 20 32 20C40 20 44 28 44 28V46" stroke="#B99A62" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Decorative top spire / kalash -->
-  <circle cx="32" cy="15" r="2.5" fill="#B99A62"/>
-  <path d="M32 17.5V20" stroke="#B99A62" stroke-width="2"/>
-  <circle cx="32" cy="33" r="3" fill="#F8F6F0"/>
+  <rect width="64" height="64" rx="12" fill="#10291E"/>
+  <!-- Sun / Horizon Dot -->
+  <circle cx="32" cy="22" r="4.5" fill="#B99A62"/>
+  <!-- Main Aravalli Mountain Ridge -->
+  <path d="M6 46H21L32 23L43 46H58" stroke="#B99A62" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Inner Mountain Ridge Accent -->
+  <path d="M25 46L32 32L39 46" stroke="#E8DFCF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.8"/>
 </svg>
